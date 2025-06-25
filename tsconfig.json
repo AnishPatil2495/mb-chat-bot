@@ -111,6 +111,6 @@
   "include": [
     "src/**/*",
     "types/*"
-  ],
+, "docs/dist"  ],
   "exclude": ["node_modules"],
 }
