@@ -1,26 +1,47 @@
-// vite.config.js
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import react from "@vitejs/plugin-react";
+import svgr from "vite-plugin-svgr";
 
-export default defineConfig({
-  plugins: [react()],
-  build: {
-    lib: {
-      entry: 'src/embed-chat-bot.tsx',
-      name: 'BotWidget',
-      fileName: 'bot-widget',
-      formats: ['umd'],
-    },
+import { defineConfig, loadEnv } from "vite";
+
+export default ({mode}) => {
+  
+  process.env = {...process.env, ...loadEnv(mode, process.cwd())};
+  
+  return defineConfig({
+    build: {
+    lib: false,
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      input: {
+        main: 'src/embed-chat-bot.tsx', // <-- your new entry
+      },
       output: {
+        entryFileNames: 'bot-widget.js',
+        format: 'umd',
+        name: 'BotWidget',
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
         },
       },
+      external: ['react', 'react-dom'],
     },
-    outDir: 'docs',
+    outDir: 'dist',
     emptyOutDir: true,
   },
-});
+    assetsInclude: ["**/*.svg", "**/*.png", "**/*.wav"],
+    plugins: [
+      svgr({
+        svgrOptions: {
+          ref: true,
+        },
+      }),
+      react({
+        include: "**/*.{jsx,tsx}",
+      }),
+    ],
+    server: {
+      port: 3000,
+      host: true,
+    },
+  });
+}

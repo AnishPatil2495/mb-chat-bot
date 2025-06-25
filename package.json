@@ -1,19 +1,7 @@
 {
   "name": "react-chatbotify",
   "homepage": "https://anishpatil2495.github.io/mb-chat-bot",
-  "keywords": [
-    "react",
-    "chat",
-    "chatbot",
-    "conversational-bot",
-    "conversational-ui",
-    "frontend-library",
-    "react-chatbotify"
-  ],
-  "files": [
-    "./dist"
-  ],
-  "version": "2.1.0",
+  "version": "1.0.0",
   "description": "A modern React library for creating flexible and extensible chatbots.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -27,12 +15,10 @@
     }
   },
   "scripts": {
-    "lint": "eslint --fix \"**/*.{ts,tsx}\"",
     "build": "tsc && vite build && node ./scripts/post-build.js",
     "prepublishOnly": "tsc && vite build && node ./scripts/post-build.js",
     "prepack": "tsc && vite build && node ./scripts/post-build.js",
     "start": "vite",
-    "prepare": "husky install",
     "unit:test": "jest __tests__/",
     "unit:test:single": "jest --findRelatedTests",
     "unit:test:watch": "jest --watch __tests__/",
@@ -56,14 +42,6 @@
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^8.24.0",
     "@vitejs/plugin-react": "^4.3.4",
-    "cypress": "^13.14.2",
-    "cypress-file-upload": "^5.0.8",
-    "eslint": "^9.20.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "husky": "^9.1.7",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
