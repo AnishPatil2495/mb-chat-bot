@@ -1,6 +1,6 @@
 {
   "name": "react-chatbotify",
-  "homepage": "https://react-chatbotify.com",
+  "homepage": "https://anishpatil2495.github.io/mb-chat-bot",
   "keywords": [
     "react",
     "chat",
@@ -39,7 +39,9 @@
     "unit:test:coverage": "jest --coverage __tests__/",
     "int:test:open": "cypress open",
     "int:test": "cypress run",
-    "validate:ssr": "node ./ssr/ssr-validate.js"
+    "validate:ssr": "node ./ssr/ssr-validate.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "tjtanjin",
   "license": "MIT",
@@ -90,5 +92,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
