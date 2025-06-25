@@ -11,6 +11,7 @@ export default ({mode}) => {
   
   return defineConfig({
     root: "src",
+    base: "/mb-chat-bot",
     build: {
     lib: false,
     rollupOptions: {
@@ -28,7 +29,7 @@ export default ({mode}) => {
       },
       external: ['react', 'react-dom'],
     },
-  },
+    },
     assetsInclude: ["**/*.svg", "**/*.png", "**/*.wav"],
     plugins: [
       svgr({
