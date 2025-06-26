@@ -27,12 +27,7 @@ const ChatBotHeader = ({ buttons }: { buttons: JSX.Element[] }) => {
   return (
     <div style={headerStyle} className="rcb-chat-header-container">
       <div className="rcb-chat-header">
-        {settings.header?.showAvatar && (
-          <div
-            style={{ backgroundImage: `url("${settings.header?.avatar}")` }}
-            className="rcb-bot-avatar"
-          />
-        )}
+        {settings.header?.showAvatar && settings.header?.avatar}
         {settings.header?.title}
       </div>
       <div className="rcb-chat-header">

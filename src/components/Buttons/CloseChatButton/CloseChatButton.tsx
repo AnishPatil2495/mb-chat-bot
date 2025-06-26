@@ -10,58 +10,39 @@ import "./CloseChatButton.css";
  * Handles closing of chat.
  */
 const CloseChatButton = () => {
-	// handles settings
-	const { settings } = useSettingsContext();
+  // handles settings
+  const { settings } = useSettingsContext();
 
-	// handles styles
-	const { styles } = useStylesContext();
+  // handles styles
+  const { styles } = useStylesContext();
 
-	// handles chat window
-	const { toggleChatWindow } = useChatWindowInternal();
+  // handles chat window
+  const { toggleChatWindow } = useChatWindowInternal();
 
-	// styles for close chat icon
-	const closeChatIconStyle: React.CSSProperties = {
-		backgroundImage: `url(${settings.header?.closeChatIcon})`,
-		fill: "#e8eaed",
-		stroke: "#e8eaed",
-		...styles.closeChatIconStyle
-	};
+  /**
+   * Renders button depending on whether an svg component or image url is provided.
+   */
+  const renderButton = () => {
+    return (
+      <span className="rcb-close-chat-icon" data-testid="rcb-close-chat-icon">
+        {settings.header?.closeChatIcon}
+      </span>
+    );
+  };
 
-	/**
-	 * Renders button depending on whether an svg component or image url is provided.
-	 */
-	const renderButton = () => {
-		const IconComponent = settings.header?.closeChatIcon;
-		if (!IconComponent || typeof IconComponent === "string") {
-			return (
-				<span
-					className="rcb-close-chat-icon"
-					data-testid="rcb-close-chat-icon"
-					style={closeChatIconStyle}
-				/>
-			)
-		}
-		return (
-			IconComponent &&
-			<span className="rcb-close-chat-icon" data-testid="rcb-close-chat-icon">
-				<IconComponent style={closeChatIconStyle}/>
-			</span>
-		)
-	}
-
-	return (
-		<div
-			aria-label={settings.ariaLabel?.closeChatButton ?? "close chat"}
-			role="button" 
-			onMouseDown={(event: MouseEvent) => {
-				event.stopPropagation();
-				toggleChatWindow(false);
-			}}
-			style={{...styles.closeChatButtonStyle}}
-		>
-			{renderButton()}
-		</div>
-	);
+  return (
+    <div
+      aria-label={settings.ariaLabel?.closeChatButton ?? "close chat"}
+      role="button"
+      onMouseDown={(event: MouseEvent) => {
+        event.stopPropagation();
+        toggleChatWindow(false);
+      }}
+      style={{ ...styles.closeChatButtonStyle }}
+    >
+      {renderButton()}
+    </div>
+  );
 };
 
 export default CloseChatButton;

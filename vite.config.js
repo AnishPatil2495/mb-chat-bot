@@ -8,9 +8,11 @@ export default ({mode}) => {
   process.env = {...process.env, ...loadEnv(mode, process.cwd())};
   
   return defineConfig({
+    root:"src",
     build: {
     lib: false,
     rollupOptions: {
+      
       input: {
         main: 'src/embed-chat-bot.tsx', // <-- your new entry
       },
@@ -25,7 +27,7 @@ export default ({mode}) => {
       },
       external: ['react', 'react-dom'],
     },
-    outDir: 'dist',
+    outDir: '../docs',
     emptyOutDir: true,
   },
     assetsInclude: ["**/*.svg", "**/*.png", "**/*.wav"],
