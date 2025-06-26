@@ -23,7 +23,7 @@
 	font-size: 14px;
 	resize: none; 
 	height: auto;
-	overflow-y: scroll;
+	overflow-y: hidden;
 	font-family: inherit;
 	background-color: #fff;
 	color: #000;
