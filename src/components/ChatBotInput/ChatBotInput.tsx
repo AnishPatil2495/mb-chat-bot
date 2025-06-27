@@ -205,8 +205,8 @@ const ChatBotInput = ({ buttons }: { buttons: JSX.Element[] }) => {
           onCompositionEnd={handleCompositionEnd}
         />
       ) : (
-        <textarea
-          ref={inputRef as RefObject<HTMLTextAreaElement>}
+        <input
+          ref={inputRef as RefObject<HTMLInputElement>}
           style={
             textAreaDisabled
               ? textAreaDisabledStyle
@@ -214,7 +214,6 @@ const ChatBotInput = ({ buttons }: { buttons: JSX.Element[] }) => {
               ? textAreaFocusedStyle
               : textAreaStyle
           }
-          rows={1}
           className="rcb-chat-input-textarea"
           placeholder={placeholder}
           onChange={handleTextAreaValueChange}
