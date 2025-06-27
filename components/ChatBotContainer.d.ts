@@ -5,7 +5,7 @@ import "./ChatBotContainer.css";
  *
  * @param plugins plugins to initialize
  */
-declare const ChatBotContainer: ({ plugins, }: {
+declare const ChatBotContainer: ({ plugins }: {
     plugins?: Array<Plugin>;
 }) => import("react/jsx-runtime").JSX.Element;
 export default ChatBotContainer;

@@ -12,20 +12,21 @@ export type Settings = {
         actionDisabledIcon?: string;
         embedded?: boolean;
         flowStartTrigger?: string;
+        showTooltip?: boolean;
     };
     tooltip?: {
         mode?: string;
         text?: string;
     };
     chatButton?: {
-        icon?: string | React.FC<React.SVGProps<SVGSVGElement>>;
+        icon?: string | JSX.Element;
     };
     header?: {
         title?: string | JSX.Element;
         showAvatar?: boolean;
-        avatar?: string;
+        avatar?: string | JSX.Element;
         buttons?: Array<JSX.Element | string>;
-        closeChatIcon?: string | React.FC<React.SVGProps<SVGSVGElement>>;
+        closeChatIcon?: string | JSX.Element;
     };
     notification?: {
         disabled?: boolean;
@@ -63,7 +64,7 @@ export type Settings = {
         showCharacterCount?: boolean;
         characterLimit?: number;
         botDelay?: number;
-        sendButtonIcon?: string | React.FC<React.SVGProps<SVGSVGElement>>;
+        sendButtonIcon?: string | JSX.Element;
         blockSpam?: boolean;
         sendOptionOutput?: boolean;
         sendCheckboxOutput?: boolean;
@@ -94,7 +95,7 @@ export type Settings = {
     botBubble?: {
         animate?: boolean;
         showAvatar?: boolean;
-        avatar?: string;
+        avatar?: JSX.Element | string;
         simulateStream?: boolean;
         streamSpeed?: number;
     };
