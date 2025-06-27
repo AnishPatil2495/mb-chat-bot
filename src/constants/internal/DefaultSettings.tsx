@@ -217,7 +217,7 @@ export const DefaultSettings: Settings = {
   },
   botBubble: {
     animate: true,
-    showAvatar: false,
+    showAvatar: true,
     avatar: (
       <div
         style={{
@@ -231,7 +231,7 @@ export const DefaultSettings: Settings = {
         AI
       </div>
     ),
-    simulateStream: false,
+    simulateStream: true,
     streamSpeed: 30,
   },
   voice: {

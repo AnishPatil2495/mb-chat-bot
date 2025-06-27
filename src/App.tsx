@@ -3,11 +3,11 @@ import ChatBot from "./components/ChatBot";
 import { Flow } from "./types/Flow";
 import { Params } from "./types/Params";
 import { askNursingQuestion } from "./services/ApiServices/nursingServices";
+import { useChatWindowInternal } from "./hooks/internal/useChatWindowInternal";
 
 function App() {
   const [name, setName] = useState("");
   const [response, setResponse] = useState<any>("");
-
   const NursingBotApiCall = async (params: Params) => {
     try {
       const response = await askNursingQuestion(params.userInput);
@@ -23,13 +23,13 @@ function App() {
   const flow: Flow = {
     start: {
       message: "Hello! What Can I Help You With?",
-      function: (params: Params) => {
-        NursingBotApiCall(params);
+      function: async (params: Params) => {
+        await NursingBotApiCall(params);
       },
     },
     show_name: {
-      function: (params: Params) => {
-        NursingBotApiCall(params);
+      function: async (params: Params) => {
+        await NursingBotApiCall(params);
       },
     },
     incorrect_answer: {
