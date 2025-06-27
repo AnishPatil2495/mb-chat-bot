@@ -41,15 +41,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: `calc(20vh)`,
-          }}
-        >
+      <header>
+        <div>
           <ChatBot
             id="chatbot-id"
             flow={flow}
