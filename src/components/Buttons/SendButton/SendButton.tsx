@@ -64,13 +64,6 @@ const SendButton = () => {
   /**
    * Renders button depending on whether an svg component or image url is provided.
    */
-  const renderButton = () => {
-    return (
-      <span className="rcb-send-icon" data-testid="rcb-send-icon">
-        {settings.chatInput?.sendButtonIcon}
-      </span>
-    );
-  };
 
   return (
     <div
@@ -94,7 +87,7 @@ const SendButton = () => {
       }
       className="rcb-send-button"
     >
-      {renderButton()}
+      {settings.chatInput?.sendButtonIcon}
     </div>
   );
 };

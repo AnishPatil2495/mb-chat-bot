@@ -12,12 +12,13 @@
 	height: 32px;
 	width: 32px;
 	margin-left: 8px;
-
+	color: #FFFFFF;
 }
 
 /* Send Icon */
 
 .rcb-send-icon {
 	width: fit-content;
+	height: 22px;
 	color: #FFFFFF;
 }
