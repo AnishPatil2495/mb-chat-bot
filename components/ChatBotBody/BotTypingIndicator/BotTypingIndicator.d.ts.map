@@ -1,1 +1,1 @@
-{"version":3,"file":"BotTypingIndicator.d.ts","sourceRoot":"","sources":["../../../../src/components/ChatBotBody/BotTypingIndicator/BotTypingIndicator.tsx"],"names":[],"mappings":"AAIA,OAAO,0BAA0B,CAAC;AAElC;;GAEG;AACH,QAAA,MAAM,kBAAkB,+CAqDvB,CAAC;AAEF,eAAe,kBAAkB,CAAC"}
+{"version":3,"file":"BotTypingIndicator.d.ts","sourceRoot":"","sources":["../../../../src/components/ChatBotBody/BotTypingIndicator/BotTypingIndicator.tsx"],"names":[],"mappings":"AAIA,OAAO,0BAA0B,CAAC;AAElC;;GAEG;AACH,QAAA,MAAM,kBAAkB,+CAgDvB,CAAC;AAEF,eAAe,kBAAkB,CAAC"}
