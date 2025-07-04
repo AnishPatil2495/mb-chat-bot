@@ -18,11 +18,6 @@ const BotTypingIndicator = () => {
     ? "rcb-bot-message-entry"
     : "";
 
-  console.log(
-    "BotTypingIndicator rendered",
-    settings.botBubble?.showAvatar,
-    settings.botBubble?.avatar
-  );
   return (
     <div className="rcb-bot-message-container">
       {settings.botBubble?.showAvatar && (

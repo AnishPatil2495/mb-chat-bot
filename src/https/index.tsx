@@ -28,17 +28,6 @@ const setAccessToken = (token: string) =>
 
 const axiosInstance: AxiosInstance = axios.create({
   baseURL: viteConfig.APP_URL,
-  headers: {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Cache-Control":
-      "no-store, no-cache, max-age=0, must-revalidate, proxy-revalidate",
-    Accept: "application/json",
-    Pragma: "no-cache",
-    "X-Content-Type-Options": "nosniff",
-    "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
-    "X-Frame-Options": "SAMEORIGIN",
-  },
 });
 
 axiosInstance.interceptors.request.use(
